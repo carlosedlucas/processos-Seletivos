@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="assets/favicon/favicon.ico"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <title>Lótus</title>
+  </head>
+  <body>
+    <header>
+      <div class="menu">
+        <nav class="nav-menu">
+          <div class="header-left">
+            <ul>
+              <li><a href="">Home</a></li>
+              <li><a href="">Feminino</a></li>
+              <li><a href="">Masculino</a></li>
+              <li><a href="">Destaque</a></li>
+              <li class="active"><a href="/promocoes">Promoções</a></li>
+            </ul>
+          </div>
+          <div class="header-right">
+            <div class="action-search">
+              <button>
+                <span class="material-icons md-36"> search </span>
+              </button>
+            </div>
+            <div class="profile">
+              <button>
+                <span class="material-icons md-36"> account_circle </span>
+              </button>
+            </div>
+            <div class="favorite">
+              <button>
+                <span class="material-icons md-36"> favorite </span>
+              </button>
+            </div>
+            <div class="cart">
+              <button>
+                <span class="material-icons md-36"> local_mall </span>
+              </button>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <section>
+      <div class="section">
+        <div class="slider">
+          <div class="slider-controls">
+            <div class="slider-control" onclick="goPrev()">
+              <span class="material-icons md-48"> arrow_back_ios_new </span>
+            </div>
+            <div class="slider-control" onclick="goNext()">
+              <span class="material-icons md-48"> arrow_forward_ios </span>
+            </div>
+          </div>
+          <div class="slider-width">
+            <div
+              class="slider-item"
+              style="
+                background-image: url('assets/slider/pexels-c-technical-6069976.jpg');
+              "
+            ></div>
+            <div
+              class="slider-item"
+              style="
+                background-image: url('assets/slider/pexels-c-technical-6070174.jpg');
+              "
+            ></div>
+            <div
+              class="slider-item"
+              style="
+                background-image: url('assets/slider/pexels-rfstudio-4177753.jpg');
+              "
+            ></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>Imagens</section>
+    <footer>Footer do site</footer>
+    <script>
+      let totalSlides = document.querySelectorAll('.slider-item').length;
+let currentSlide = 0;
+
+let sliderWidth = document.querySelector('.slider').clientWidth;
+
+document.querySelector('.slider-width').style.width = `${
+  sliderWidth * totalSlides
+}px`;
+
+document.querySelector('.slider-controls').style.width = `${sliderWidth}px`;
+
+document.querySelector('.slider-controls').style.height = `${
+  document.querySelector('.slider').clientHeight
+}px`;
+
+function goPrev() {
+  currentSlide--;
+  if (currentSlide < 0) {
+    currentSlide = totalSlides - 1;
+  }
+  updateMargin();
+}
+
+function goNext() {
+  currentSlide++;
+  if (currentSlide > totalSlides - 1) {
+    currentSlide = 0;
+  }
+  updateMargin();
+}
+
+function updateMargin() {
+  let sliderItemWidth = document.querySelector('.slider-item').clientWidth;
+  let newMargin = currentSlide * sliderItemWidth;
+  document.querySelector('.slider-width').style.marginLeft = `-${newMargin}px`;
+}
+
+setInterval(goNext, 5000);
+
+    </script>
+  </body>
+</html>

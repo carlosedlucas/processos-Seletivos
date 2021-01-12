@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+.menu {
+  width: 1200px;
+  height: 120px;
+  display: flex;
+  margin: auto;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+}
+
+.nav-menu ul,
+.nav-menu li {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+.nav-menu ul {
+  display: flex;
+}
+
+.nav-menu a {
+  padding: 15px;
+  text-decoration: none;
+  color: #a3a19d;
+  font-family: poppins;
+  font-size: 18px;
+  line-height: 25px;
+}
+
+.nav-menu .active a,
+.nav-menu a:hover {
+  color: red;
+}
+
+.header-left {
+  display: flex;
+}
+
+.header-right {
+  display: flex;
+}
+
+.header-right button {
+  margin: 8px;
+}
+
+.section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.slider {
+  width: 1200px;
+  height: 600px;
+  overflow: hidden;
+}
+
+.slider-width {
+  height: 100%;
+  display: flex;
+  transition: all ease 2s;
+}
+
+.slider-item {
+  width: 100vw;
+  height: inherit;
+  background-position: center;
+  background-size: cover;
+}
+
+.slider-controls {
+  position: absolute;
+  z-index: 99;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.slider-control {
+  width: 48px;
+  height: 48px;
+  background-color: #fff;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.material-icons.md-18 {
+  font-size: 18px;
+}
+.material-icons.md-24 {
+  font-size: 24px;
+}
+.material-icons.md-36 {
+  font-size: 36px;
+}
+.material-icons.md-48 {
+  font-size: 48px;
+}
